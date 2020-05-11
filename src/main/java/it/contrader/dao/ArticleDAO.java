@@ -92,15 +92,15 @@ public class ArticleDAO {
 		if (!articleRead.equals(articleToUpdate)) {
 			try {
 				// Fill the userToUpdate object
-				if (articleToUpdate.getPrice() == null || articleToUpdate.getPrice().equals("")) { //equals va tolto?
+				if (articleToUpdate.getPrice()==0) {
 					articleToUpdate.setPrice(articleRead.getPrice());
 				}
 
 				if (articleToUpdate.getDescription() == null || articleToUpdate.getDescription().equals("")) {
-					articleToUpdate.setDEscription(articleRead.getDescription());
+					articleToUpdate.setDescription(articleRead.getDescription());
 				}
 
-				if (articleToUpdate.getTime() == null || articleToUpdate.getTime().equals("")) {
+				if (articleToUpdate.getTime()==0) {
 					articleToUpdate.setTime(articleRead.getTime());
 				}
 

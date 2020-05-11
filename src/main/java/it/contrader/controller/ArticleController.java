@@ -54,9 +54,9 @@ private static String sub_package = "article.";
 		
 		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
 		case "INSERT":
-			price = request.get("price").toString();
+			price =Integer.parseInt( request.get("price").toString());
 			description = request.get("description").toString();
-			time = request.get("time").toString();
+			time =Integer.parseInt( request.get("time").toString());
 			
 			//costruisce l'oggetto user da inserire
 			ArticleDTO articletoinsert = new ArticleDTO(price, description, time);
@@ -81,9 +81,9 @@ private static String sub_package = "article.";
 		// Arriva qui dalla UserUpdateView
 		case "UPDATE":
 			id = Integer.parseInt(request.get("id").toString());
-			price = request.get("price").toString();
+			price =Integer.parseInt( request.get("price").toString());
 			description = request.get("description").toString();
-			time = request.get("time").toString();
+			time =Integer.parseInt( request.get("time").toString());
 			ArticleDTO articletoupdate = new ArticleDTO(price, description, time);
 			articletoupdate.setId(id);
 			articleService.update(articletoupdate);
@@ -94,9 +94,9 @@ private static String sub_package = "article.";
 			
 		//Arriva qui dalla UserView Invoca il Service e invia alla UserView il risultato da mostrare 
 		case "ARTICLELIST":
-			List<ArticleDTO> articleDTO = articleService.getAll();
+			List<ArticleDTO> articlesDTO = articleService.getAll();
 			//Impacchetta la request con la lista degli user
-			request.put("article", articleDTO);
+			request.put("article", articlesDTO);
 			MainDispatcher.getInstance().callView("Article", request);
 			break;
 			

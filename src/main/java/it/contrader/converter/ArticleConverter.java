@@ -8,7 +8,7 @@ import it.contrader.model.Article;
 
 public class ArticleConverter {
 
-	public ArticleDTO toDTO(User user) {
+	public ArticleDTO toDTO(Article article) {
 		ArticleDTO articleDTO = new ArticleDTO(article.getId(), article.getPrice(), article.getDescription(), article.getTime());
 		return articleDTO;
 	}
