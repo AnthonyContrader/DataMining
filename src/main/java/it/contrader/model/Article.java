@@ -5,24 +5,22 @@ public class Article {
 	 * Qui sotto definisco gli attributi di Article. 
 	 */
 	private int id;
-	private int price;
+	private String name;
 	private String description;
-	private int time;
-	/**
-	 * Definisco i due costruttori, uno vuoto e uno con tre parametri per costrire oggetti di tipo User
-	 */
+	private int price;
+	
 	public Article () {
 	}
-	public Article(int price, String description, int time) {
-		this.price = price;
+	public Article(String name, String description, int price) {
+		this.name = name;
 		this.description = description;
-		this.time = time;
+		this.price = price;
 	}
-	public Article(int id, int price, String description, int time) {
+	public Article(int id, String name, String description, int price) {
 		this.id = id;
-		this.price = price;
+		this.name = name;
 		this.description = description;
-		this.time = time;
+		this.price = price;
 	}
 	public int getId() {
 		return id;
@@ -30,11 +28,11 @@ public class Article {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public int getPrice() {
-		return price;
+	public String getName() {
+		return name;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getDescription() {
 		return description;
@@ -42,15 +40,15 @@ public class Article {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public int getTime() {
-		return time;
+	public int getPrice() {
+		return price;
 	}
-	public void setTime(int time) {
-		this.time = time;
+	public void setPrice(int price) {
+		this.price= price;
 	}
 	@Override
 	public String toString() {
-		return  id + "\t"+ price + "\t\t"+ description + "\t\t" + time;
+		return  id + "\t"+ name + "\t\t"+ description + "\t\t" + price;
 	}
 	
 	//Metodo per il confronto degli oggetti
@@ -65,14 +63,16 @@ public class Article {
 			Article other = (Article) obj;
 			if (id != other.id)
 				return false;
+			if (name == null) {
+				if (other.name != null)
+					return false;
+			} else if (!name.equals(other.name))
 			if (description == null) {
 				if (other.description != null)
 					return false;
 			} else if (!description.equals(other.description))
 				return false;
 			if (price != other.price)
-				return false;
-			if (time != other.time)
 				return false;
 			return true;
 		}

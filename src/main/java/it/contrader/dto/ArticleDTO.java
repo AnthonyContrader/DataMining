@@ -5,11 +5,11 @@ public class ArticleDTO {
 	
 	private int id;
 	
-	private int price;
+	private String name;
 	
 	private String description;
 	
-	private int time;
+	private int price;
 	
 
 	public ArticleDTO() {
@@ -17,25 +17,25 @@ public class ArticleDTO {
 	}
 
 
-	public ArticleDTO(int price, String description, int time) {
+	public ArticleDTO(String name, String description, int price) {
 		
-		this.price = price;
+		this.name = name;
 		
 		this.description = description;
 		
-		this.time = time;
+		this.price = price;
 	}
 
 
-	public ArticleDTO(int id, int price, String description, int time) {
+	public ArticleDTO(int id, String name, String description, int price) {
 		
 		this.id = id;
 		
-		this.price = price;
+		this.name = name;
 		
 		this.description = description;
 		
-		this.time = time;
+		this.price = price;
 	}
 
 
@@ -49,13 +49,13 @@ public class ArticleDTO {
 	}
 
 
-	public int getPrice() {
-		return price;
+	public String getName() {
+		return name;
 	}
 
 
-	public void setPrice(int price) {
-		this.price = price;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 
@@ -69,18 +69,18 @@ public class ArticleDTO {
 	}
 
 
-	public int getTime() {
-		return time;
+	public int getPrice() {
+		return price;
 	}
 
 
-	public void setTime(int time) {
-		this.time = time;
+	public void setPrice(int price) {
+		this.price = price;
 	}
 	
 	@Override
 	public String toString() {
-		return  id + "\t"+ price + "\t\t"+ description + "\t\t" + time;
+		return  id + "\t"+ name + "\t\t"+ description + "\t\t" + price;
 	}
 	
 	

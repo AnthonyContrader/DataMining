@@ -11,23 +11,11 @@ public class ArticleController implements Controller {
 private static String sub_package = "article.";
 	
 	private ArticleService articleService;
-	/**
-	 * Costruisce un oggetto di tipo UserService per poterne usare i metodi
-	 */
+	
 	public ArticleController() {
 		this.articleService = new ArticleService();
 	}
 	
-	
-	
-	/**
-	 * Metodo dell'interfaccia Controller. Estrae dalla request la mode
-	 * (che riceve dalle view specifiche e può essere la richesta di una 
-	 * scelta da parte dell'utente "GETCHOICE") e la scelta dell'utente.
-	 * 
-	 * Se la modalità corrisponde ad una CRUD il controller chiama i service,
-	 * altrimenti rimanda alla View della CRUD per richiedere i parametri
-	 */
 	@Override
 	public void doControl(Request request) {
 		
@@ -38,9 +26,9 @@ private static String sub_package = "article.";
 
 		//Definisce i campi della classe (serviranno sempre, tanto vale definirli una sola volta)
 		int id;
-		int price;
+		String name;
 		String description;
-		int time;
+		int price;
 
 		switch (mode) {
 		
@@ -54,12 +42,12 @@ private static String sub_package = "article.";
 		
 		// Arriva qui dalla UserInsertView. Estrae i parametri da inserire e chiama il service per inserire uno user con questi parametri
 		case "INSERT":
-			price =Integer.parseInt( request.get("price").toString());
+			name =request.get("name").toString();
 			description = request.get("description").toString();
-			time =Integer.parseInt( request.get("time").toString());
+			price =Integer.parseInt( request.get("price").toString());
 			
 			//costruisce l'oggetto user da inserire
-			ArticleDTO articletoinsert = new ArticleDTO(price, description, time);
+			ArticleDTO articletoinsert = new ArticleDTO(name, description, price);
 			//invoca il service
 			articleService.insert(articletoinsert);
 			request = new Request();
@@ -81,10 +69,10 @@ private static String sub_package = "article.";
 		// Arriva qui dalla UserUpdateView
 		case "UPDATE":
 			id = Integer.parseInt(request.get("id").toString());
-			price =Integer.parseInt( request.get("price").toString());
+			name =request.get("name").toString();
 			description = request.get("description").toString();
-			time =Integer.parseInt( request.get("time").toString());
-			ArticleDTO articletoupdate = new ArticleDTO(price, description, time);
+			price =Integer.parseInt( request.get("price").toString());
+			ArticleDTO articletoupdate = new ArticleDTO(name, description, price);
 			articletoupdate.setId(id);
 			articleService.update(articletoupdate);
 			request = new Request();

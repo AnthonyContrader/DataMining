@@ -8,9 +8,9 @@ public class ArticleInsertView extends AbstractView {
 	
 	private Request request;
 
-	private int price;
+	private String name;
 	private String description;
-	private int time;
+	private int price;
 	private final String mode = "INSERT";
 
 	public ArticleInsertView() {
@@ -28,21 +28,21 @@ public class ArticleInsertView extends AbstractView {
 
 	@Override
 	public void showOptions() {
-			System.out.println("Inserisci filtro prezzo:");
-			price = getInput();
+			System.out.println("Inserisci nome articolo");
+			name = getInput();
 			System.out.println("descrizione:");
 			description = getInput();
-			System.out.println("tempo:");
-			time = getInput();
+			System.out.println("price:");
+			price = Integer.parseInt (getInput());
 	}
 
 	
 	@Override
 	public void submit() {
 		request = new Request();
-		request.put("price", price);
+		request.put("name", name);
 		request.put("description", description);
-		request.put("time", time);
+		request.put("price", price);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Article", "doControl", request);
 	}

@@ -9,9 +9,9 @@ public class ArticleUpdateView extends AbstractView {
 	private Request request;
 
 	private int id;
-	private String price;
+	private String name;
 	private String description;
-	private String time;
+	private int price;
 	private final String mode = "UPDATE";
 
 	public ArticleUpdateView() {
@@ -34,12 +34,12 @@ public class ArticleUpdateView extends AbstractView {
 		try {
 			System.out.println("Inserisci id dell'articolo:");
 			id = Integer.parseInt(getInput());
-			System.out.println("Inserisci filtro prezzo:");
-			price = getInput();
+			System.out.println("Inserisci nome articolo:");
+			name = getInput();
 			System.out.println("Inserisci descrizione:");
 			description = getInput();
-			System.out.println("Inserisci tempo:");
-			time = getInput();
+			System.out.println("Inserisci prezzo");
+			price = Integer.parseInt (getInput());
 		} catch (Exception e) {
 
 		}
@@ -51,9 +51,9 @@ public class ArticleUpdateView extends AbstractView {
 	public void submit() {
 		request = new Request();
 		request.put("id", id);
-		request.put("price", price);
+		request.put("name", name);
 		request.put("description", description);
-		request.put("time", time);
+		request.put("price", price);
 		request.put("mode", mode);
 		MainDispatcher.getInstance().callAction("Article", "doControl", request);
 	}

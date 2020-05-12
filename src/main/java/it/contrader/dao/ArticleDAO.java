@@ -10,9 +10,9 @@ import it.contrader.model.Article;
 public class ArticleDAO {
 	
 	private final String QUERY_ALL = "SELECT * FROM article";
-	private final String QUERY_CREATE = "INSERT INTO article (price, description, time) VALUES (?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO article (name, description,price) VALUES (?,?,?)";
 	private final String QUERY_READ = "SELECT * FROM article WHERE id=?";
-	private final String QUERY_UPDATE = "UPDATE article SET price=?, description=?, time=? WHERE id=?";
+	private final String QUERY_UPDATE = "UPDATE article SET name=?, description=?, price=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM article WHERE id=?";
 
 	public ArticleDAO() {
@@ -28,10 +28,10 @@ public class ArticleDAO {
 			Article article;
 			while (resultSet.next()) {
 				int id = resultSet.getInt("id");
-				int price = resultSet.getInt("price");
+				String name = resultSet.getString("name");
 				String description = resultSet.getString("description");
-				int time = resultSet.getInt("time");
-				article = new Article(price, description, time);
+				int price = resultSet.getInt("price");
+				article = new Article(name, description, price);
 				article.setId(id);
 				articleList.add(article);
 			}
@@ -45,9 +45,9 @@ public class ArticleDAO {
 		Connection connection = ConnectionSingleton.getInstance();
 		try {	
 			PreparedStatement preparedStatement = connection.prepareStatement(QUERY_CREATE);
-			preparedStatement.setInt(1, articleToInsert.getPrice());
+			preparedStatement.setString(1, articleToInsert.getName());
 			preparedStatement.setString(2, articleToInsert.getDescription());
-			preparedStatement.setInt(3, articleToInsert.getTime());
+			preparedStatement.setInt(3, articleToInsert.getPrice());
 			preparedStatement.execute();
 			return true;
 		} catch (SQLException e) {
@@ -65,13 +65,14 @@ public class ArticleDAO {
 			preparedStatement.setInt(1, articleId);
 			ResultSet resultSet = preparedStatement.executeQuery();
 			resultSet.next();
+			String name;
 			String description;
-			int price, time;
+			int price;
 
-			price = resultSet.getInt("price");
+			name = resultSet.getString("name");
 			description = resultSet.getString("description");
-			time = resultSet.getInt("time");
-			Article article = new Article(price, description, time);
+			price = resultSet.getInt("price");
+			Article article = new Article(name, description, price);
 			article.setId(resultSet.getInt("id"));
 
 			return article;
@@ -92,23 +93,23 @@ public class ArticleDAO {
 		if (!articleRead.equals(articleToUpdate)) {
 			try {
 				// Fill the userToUpdate object
-				if (articleToUpdate.getPrice()==0) {
-					articleToUpdate.setPrice(articleRead.getPrice());
+				if (articleToUpdate.getName() == null || articleToUpdate.getName().equals("")) {
+					articleToUpdate.setName(articleRead.getName());
 				}
 
 				if (articleToUpdate.getDescription() == null || articleToUpdate.getDescription().equals("")) {
 					articleToUpdate.setDescription(articleRead.getDescription());
 				}
 
-				if (articleToUpdate.getTime()==0) {
-					articleToUpdate.setTime(articleRead.getTime());
+				if (articleToUpdate.getPrice()==0) {
+					articleToUpdate.setPrice(articleRead.getPrice());
 				}
 
 				// Update the user
 				PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
-				preparedStatement.setInt(1, articleToUpdate.getPrice());
+				preparedStatement.setString(1, articleToUpdate.getName());
 				preparedStatement.setString(2, articleToUpdate.getDescription());
-				preparedStatement.setInt(3, articleToUpdate.getTime());
+				preparedStatement.setInt(3, articleToUpdate.getPrice());
 				preparedStatement.setInt(4, articleToUpdate.getId());
 				int a = preparedStatement.executeUpdate();
 				if (a > 0)

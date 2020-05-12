@@ -3,7 +3,7 @@ package it.contrader.view;
 import java.util.List;
 
 import it.contrader.controller.Request;
-import it.contrader.dto.UserDTO;
+import it.contrader.dto.ArticleDTO;
 import it.contrader.main.MainDispatcher;
 
 public class ArticleView extends AbstractView {
@@ -19,11 +19,11 @@ public class ArticleView extends AbstractView {
 	public void showResults(Request request) {
 		if (request != null) {
 			System.out.println("\n------------------- Articles ----------------\n");
-			System.out.println("ID\tPrice\tDescription\tTime");
+			System.out.println("ID\tName\tDescription\tPrice");
 			System.out.println("----------------------------------------------------\n");
 			
 			@SuppressWarnings("unchecked")
-			List<ArticleDTO> articles = (List<ArticleDTO>) request.get("articles");
+			List<ArticleDTO> articles = (List<ArticleDTO>) request.get("article");
 			for (ArticleDTO a: articles)
 				System.out.println(a);
 			System.out.println();

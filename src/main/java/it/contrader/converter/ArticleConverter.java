@@ -9,12 +9,12 @@ import it.contrader.model.Article;
 public class ArticleConverter {
 
 	public ArticleDTO toDTO(Article article) {
-		ArticleDTO articleDTO = new ArticleDTO(article.getId(), article.getPrice(), article.getDescription(), article.getTime());
+		ArticleDTO articleDTO = new ArticleDTO(article.getId(), article.getName(), article.getDescription(), article.getPrice());
 		return articleDTO;
 	}
 
 	public Article toEntity(ArticleDTO articleDTO) {
-		Article article = new Article(articleDTO.getId(), articleDTO.getPrice(), articleDTO.getDescription(), articleDTO.getTime());
+		Article article = new Article(articleDTO.getId(), articleDTO.getName(), articleDTO.getDescription(), articleDTO.getPrice());
 		return article;
 	}	
 	
