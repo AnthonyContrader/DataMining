@@ -16,6 +16,9 @@
   <a class="active" href="homeadmin.jsp">Home</a>
   <a href="UserServlet?mode=userlist">Users</a>
   <a href="ArticleServlet?mode=articlelist">Article</a>
+  <a href="BrandServlet?mode=brandlist">Brand</a>
+  <a href="PlatformServlet?mode=platformlist">Platform</a>
+  <a href="FeedbackServlet?mode=feedbacklist">Feedback</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 
