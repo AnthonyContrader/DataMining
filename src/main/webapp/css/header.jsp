@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="css/vittoriostyle.css" rel="stylesheet">
+<link href="css/mikitostyle.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="header">SAMPLE Project
+<div class="header">DATA MINING
 </div>
 
 
