@@ -1,9 +1,6 @@
 package it.contrader.servlets;
 
 import java.util.List;
-
-
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -56,7 +53,7 @@ public class FeedbackServlet extends HttpServlet {
 			break;
 
 		case "INSERT":
-			vote = Integer.parseInt(request.getParameter("vote"));
+			int vote = Integer.parseInt(request.getParameter("vote"));
 			String review = request.getParameter("review").toString();
 			
 			
@@ -64,20 +61,20 @@ public class FeedbackServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/myPage/usermanager.jsp").forward(request, response);                 // qui bisogna mettere mypage manager?
+			getServletContext().getRequestDispatcher("/feedback/feedbackmanager.jsp").forward(request, response);                 // qui bisogna mettere mypage manager?
 		
 			break;
 			
 		case "UPDATE":
-			message = request.getParameter("message");
-			chronology = request.getParameter("chronology");
-			disputesReports = request.getParameter("disputesReports");
+			vote = Integer.parseInt(request.getParameter("vote"));
+			review = request.getParameter("review");
+			
 			
 			id = Integer.parseInt(request.getParameter("id"));
-			dto = new MyPageDTO (id,message, chronology, disputesReports);
+			dto = new FeedbackDTO (id,vote, review);
 			ans = service.update(dto);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/myPage/usermanager.jsp").forward(request, response);                   // vedi sopra
+			getServletContext().getRequestDispatcher("/feedback/feedbackmanager.jsp").forward(request, response);                   // vedi sopra
 			break;
 
 		case "DELETE":
@@ -85,7 +82,7 @@ public class FeedbackServlet extends HttpServlet {
 			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/myPage/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/feedback/feedbackmanager.jsp").forward(request, response);
 			break;
 		}
 	}

@@ -63,7 +63,7 @@ public class ArticleServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/article/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/article/articlemanager.jsp").forward(request, response);
 			break;
 			
 		case "UPDATE":
@@ -74,7 +74,7 @@ public class ArticleServlet extends HttpServlet {
 			dto = new ArticleDTO (id,name, description, price);
 			ans = service.update(dto);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/article/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/article/articlemanager.jsp").forward(request, response);
 			break;
 
 		case "DELETE":
@@ -82,7 +82,7 @@ public class ArticleServlet extends HttpServlet {
 			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/article/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/article/articlemanager.jsp").forward(request, response);
 			break;
 		}
 	}

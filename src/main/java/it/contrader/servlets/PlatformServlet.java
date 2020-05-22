@@ -38,7 +38,7 @@ public class PlatformServlet extends HttpServlet {
 
 		case "PLATFORMLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/platform/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/platform/platformmanager.jsp").forward(request, response);
 			break;
 
 		case "READ":
@@ -47,11 +47,11 @@ public class PlatformServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/platform/readuser.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/platform/readplatform.jsp").forward(request, response);
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/platform/updateuser.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/platform/updateplatform.jsp").forward(request, response);
 			
 			break;
 
@@ -63,7 +63,7 @@ public class PlatformServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/platform/usermanager.jsp").forward(request, response);                 // qui bisogna mettere paltform manager?
+			getServletContext().getRequestDispatcher("/platform/platformmanager.jsp").forward(request, response);                 // qui bisogna mettere paltform manager?
 		
 			break;
 			
@@ -83,7 +83,7 @@ public class PlatformServlet extends HttpServlet {
 			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/platform/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/platform/platformmanager.jsp").forward(request, response);
 			break;
 		}
 	}

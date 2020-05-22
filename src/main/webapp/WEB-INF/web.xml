@@ -57,13 +57,13 @@
   
   <servlet>
     <description></description>
-    <display-name>MyPageServlet</display-name>
-    <servlet-name>MyPageServlet</servlet-name>
-    <servlet-class>it.contrader.servlets.MyPageServlet</servlet-class>
+    <display-name>FeedbackServlet</display-name>
+    <servlet-name>FeedbackServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.FeedbackServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>MyPageServlet</servlet-name>
-    <url-pattern>/MyPageServlet</url-pattern>
+    <servlet-name>FeedbackServlet</servlet-name>
+    <url-pattern>/FeedbackServlet</url-pattern>
   </servlet-mapping>
   
   <servlet>

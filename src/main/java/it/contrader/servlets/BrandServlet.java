@@ -38,7 +38,7 @@ public class BrandServlet extends HttpServlet {
 
 		case "BRANDLIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/platform/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/brand/brandmanager.jsp").forward(request, response);
 			break;
 
 		case "READ":
@@ -47,11 +47,11 @@ public class BrandServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/brand/readuser.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/brand/readbrand.jsp").forward(request, response);
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/brand/updateuser.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/brand/updatebrand.jsp").forward(request, response);
 			
 			break;
 
@@ -63,7 +63,7 @@ public class BrandServlet extends HttpServlet {
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/brand/usermanager.jsp").forward(request, response);                 // qui bisogna mettere brand manager?
+			getServletContext().getRequestDispatcher("/brand/brandmanager.jsp").forward(request, response);                 // qui bisogna mettere brand manager?
 		
 			break;
 			
@@ -75,7 +75,7 @@ public class BrandServlet extends HttpServlet {
 			dto = new BrandDTO (id,name, category);
 			ans = service.update(dto);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/brand/usermanager.jsp").forward(request, response);                   // vedi sopra
+			getServletContext().getRequestDispatcher("/brand/brandmanager.jsp").forward(request, response);                   // vedi sopra
 			break;
 
 		case "DELETE":
@@ -83,7 +83,7 @@ public class BrandServlet extends HttpServlet {
 			ans = service.delete(id);
 			request.setAttribute("ans", ans);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/brand/usermanager.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/brand/brandmanager.jsp").forward(request, response);
 			break;
 		}
 	}
