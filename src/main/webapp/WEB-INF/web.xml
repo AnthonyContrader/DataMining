@@ -55,4 +55,25 @@
     <url-pattern>/PlatformServlet</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <description></description>
+    <display-name>MyPageServlet</display-name>
+    <servlet-name>MyPageServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.MyPageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MyPageServlet</servlet-name>
+    <url-pattern>/MyPageServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>BrandServlet</display-name>
+    <servlet-name>BrandServlet</servlet-name>
+    <servlet-class>it.contrader.servlets.BrandServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BrandServlet</servlet-name>
+    <url-pattern>/BrandServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
