@@ -38,7 +38,7 @@ public class ArticleServlet extends HttpServlet {
 
 		case "ARTICLELIST":
 			updateList(request);
-			getServletContext().getRequestDispatcher("/article/usermanager.jsp").forward(request, response);                  //qui metto article?
+			getServletContext().getRequestDispatcher("/article/articlemanager.jsp").forward(request, response);                  //qui metto article?
 			break;
 
 		case "READ":
@@ -47,11 +47,11 @@ public class ArticleServlet extends HttpServlet {
 			request.setAttribute("dto", dto);
 			
 			if (request.getParameter("update") == null) {
-				 getServletContext().getRequestDispatcher("/article/readuser.jsp").forward(request, response);
+				 getServletContext().getRequestDispatcher("/article/readarticle.jsp").forward(request, response);
 				
 			}
 			
-			else getServletContext().getRequestDispatcher("/article/updateuser.jsp").forward(request, response);
+			else getServletContext().getRequestDispatcher("/article/updatearticle.jsp").forward(request, response);
 			
 			break;
 
