@@ -78,8 +78,7 @@
  			<select id="type" name="usertype">
   				<option value="ADMIN">ADMIN</option>
   				<option value="USER">USER</option>
- 
-			</select>
+ 			</select>
     	</div>
   </div>
       <button type="submit" >Insert</button>
