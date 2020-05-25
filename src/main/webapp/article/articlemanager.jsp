@@ -6,20 +6,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/mikitostyle.css" rel="stylesheet">
-<title>ARTICLE</title>
+<title>Article Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
 <a  href="homeadmin.jsp">Back to Home</a>
- <br>
-<br>
-<br>
+<a class="active" href="ArticleServlet?mode=articlelist">Articles</a>
+ </div>
  <div class="main">
 	<%
 		List<ArticleDTO> list = (List<ArticleDTO>) request.getAttribute("list");
 	%>
+	
 <br>
+
 	<table>
 		<tr>
 			<th>Name</th>
@@ -56,7 +57,7 @@
       <label for="name">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="article" name="name" placeholder="inserisci name">
+      <input type="text" id="name" name="name" placeholder="inserisci name">
     </div>
   </div>
   <div class="row">
@@ -73,15 +74,11 @@
     </div>
    		 <div class="col-75">
    		 <input type="text" id="price" name="price" placeholder="inserisci prezzo"> 
-   		 	</select>
+   	</div>
 </div>
- <button type="submit" >Insert</button>
-</div>
-</div>
-     
-</form>
-
-</div>
+ <button type="submit" >Insert</button>    
+	</form>
+	</div>
 <br>
 <%@ include file="../css/footer.jsp" %>
 </body>

@@ -10,8 +10,7 @@
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
- 
-  <a class="active"  href="FeedbackServlet?mode=Feedbacklist">feedbacks</a>
+  <a class="active"  href="FeedbackServlet?mode=Feedbacklist">Feedbacks</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>

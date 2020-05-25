@@ -15,7 +15,9 @@
 </div>
 <br>
 <div class="main">
+
 <%FeedbackDTO f = (FeedbackDTO) request.getAttribute("dto");%>
+
 <form id="floatleft" action="FeedbackServlet?mode=update&id=<%=f.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
@@ -31,7 +33,6 @@
     </div>
     <div class="col-75">
       <input type="text" id="review" name="review" value=<%=f.getReview()%>> 
-</select>
     	</div>
   </div>
       <button type="submit" >Edit</button>

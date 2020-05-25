@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/mikitostyle.css" rel="stylesheet">
-<title>PLATFORM</title>
+<title>Platform Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
@@ -17,7 +17,7 @@
 <br>
  <div class="main">
 	<%
-		List<PlatformDTO> list = (List<PlatformDTO>) request.getAttribute("list");
+		List<PlatformDTO> list = (List<PlatformDTO>)request.getAttribute("list");
 	%>
 <br>
 	<table>
@@ -32,7 +32,7 @@
 			for (PlatformDTO p : list) {
 		%>
 		<tr>
-			<td><a href=PlatformServlet?mode=read&id=<%=p.getId()%>>
+			<td><a href="PlatformServlet?mode=read&id"=<%=p.getId()%>>
 					<%=p.getName()%>
 			</a></td>
 			<td><%=p.getDescription()%></td>

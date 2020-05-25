@@ -24,6 +24,7 @@
 		<tr>
 			<th>Name</th>
 			<th>Category</th>
+			<th></th>
             <th></th>
 			<th></th>
 		</tr>
@@ -52,7 +53,7 @@
 <form id="floatright" action="BrandServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">Name</label>
+      <label for="brand">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="brand" name="name" placeholder="inserisci name">
@@ -64,14 +65,14 @@
     </div>
     <div class="col-75">
       <input type="text" id="category" name="category" placeholder="inserisci categoria"> 
-
+	</select>
   </div>
-</select>
-
  <button type="submit" >Insert</button>
 </div>
 </div>
+
 </form>
+
 </div>
 <br>
 <%@ include file="../css/footer.jsp" %>

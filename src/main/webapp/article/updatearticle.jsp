@@ -14,7 +14,9 @@
   <a class="active" href="ArticleServlet?mode=articlelist">Articles</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
+
 <br>
+
 <div class="main">
 
 <%ArticleDTO a = (ArticleDTO) request.getAttribute("dto");%>
@@ -23,28 +25,26 @@
 <form id="floatleft" action="ArticleServlet?mode=update&id=<%=a.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="article">Name</label>
+      <label for="name">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="article" name="name" value=<%=a.getName()%>>
+      <input type="text" id="name" name="name" value=<%=a.getName()%>>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="description">Description</label>
+     <label for="name">Description</label>
     </div>
     <div class="col-75">
-      <input type="text" id="description" name="description" value=<%=a.getDescription()%>> 
-			
+      <input type="text" id="description" name="description" value=<%=a.getDescription()%>> 	
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="type">price</label>
+      <label for="type">Price</label>
     </div>
    		 <div class="col-75">
-<input		type="text" id="price" name="price" value=<%=a.getPrice()%>> 
-			</select>
+		 <input type="text" id="price" name="price" value=<%=a.getPrice()%>> 
     	</div>
   </div>
       <button type="submit" >Edit</button>

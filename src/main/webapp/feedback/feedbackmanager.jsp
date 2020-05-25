@@ -6,20 +6,21 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="../css/mikitostyle.css" rel="stylesheet">
-<title>FEEDBACK</title>
+<title>Feedback Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
 <a  href="homeadmin.jsp">Back to Home</a>
- <br>
-<br>
-<br>
+<a class="active" href="FeedbackServlet?mode=feedbacklist">Feedbacks</a>
+  </div>
 <div class="main">
 	<%
 		List<FeedbackDTO> list = (List<FeedbackDTO>) request.getAttribute("list");
 	%>
+	
 <br>
+
 	<table>
 		<tr>
 			<th>Vote</th>
@@ -47,15 +48,13 @@
 		%>
 	</table>
 
-
-
 <form id="floatright" action="FeedbackServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
       <label for="vote">Vote</label>
     </div>
     <div class="col-75">
-      <input type="text" id="feedback" name="vote" placeholder="inserisci un voto">
+      <input type="text" id="vote" name="vote" placeholder="inserisci voto">
     </div>
   </div>
   <div class="row">
@@ -63,17 +62,15 @@
      <label for="review">Review</label>
     </div>
     <div class="col-75">
-      <input type="text" id="review" name="review" placeholder="inserisci una recenzione"> 
-
+      <input type="text" id="review" name="review" placeholder="inserisci recensione"> 
+    	</div>
   </div>
-</select>
-
- <button type="submit" >Insert</button>
-</div>
-</div>
+      <button type="submit" >Insert</button>
 </form>
+
 </div>
 <br>
 <%@ include file="../css/footer.jsp" %>
 </body>
 </html>
+

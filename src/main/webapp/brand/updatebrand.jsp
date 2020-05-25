@@ -23,7 +23,7 @@
 <form id="floatleft" action="BrandServlet?mode=update&id=<%=b.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="article">Name</label>
+      <label for="brand">Name</label>
     </div>
     <div class="col-75">
       <input type="text" id="article" name="name" value=<%=b.getName()%>>
@@ -35,9 +35,8 @@
     </div>
     <div class="col-75">
       <input type="text" id="category" name="category" value=<%=b.getCategory()%>> 
-</div>
-  
-			</select>
+	  </div>
+	  
     	</div>
   </div>
       <button type="submit" >Edit</button>

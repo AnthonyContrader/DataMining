@@ -55,8 +55,6 @@ public class FeedbackServlet extends HttpServlet {
 		case "INSERT":
 			int vote = Integer.parseInt(request.getParameter("vote"));
 			String review = request.getParameter("review").toString();
-			
-			
 			dto = new FeedbackDTO (vote,review);
 			ans = service.insert(dto);
 			request.setAttribute("ans", ans);

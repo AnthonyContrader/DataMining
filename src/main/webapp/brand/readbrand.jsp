@@ -24,12 +24,10 @@
 	<tr> 
 		<th>Name</th>
 		<th>Category</th>
-	
 	</tr>
 	<tr>
 		<td><%=b.getName()%></td>
 		<td> <%=b.getCategory()%></td>
-	
 	</tr>	
 </table>
 
