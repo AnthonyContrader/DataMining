@@ -85,14 +85,14 @@ public class ArticleDAO implements DAO<Article>{
 	public boolean update(Article articleToUpdate) {
 	Connection connection = ConnectionSingleton.getInstance();
 
-	// Check if id is present
+	
 	if (articleToUpdate.getId() == 0)
 	return false;
 
 	Article articleRead = read(articleToUpdate.getId());
 	if (!articleRead.equals(articleToUpdate)) {
 	try {
-	// Fill the userToUpdate object
+	
 	if (articleToUpdate.getName() == null || articleToUpdate.getName().equals("")) {
 	articleToUpdate.setName(articleRead.getName());
 	}
@@ -105,7 +105,7 @@ public class ArticleDAO implements DAO<Article>{
 	articleToUpdate.setPrice(articleRead.getPrice());
 	}
 
-	// Update the user
+	
 	PreparedStatement preparedStatement = (PreparedStatement) connection.prepareStatement(QUERY_UPDATE);
 	preparedStatement.setString(1, articleToUpdate.getName());
 	preparedStatement.setString(2, articleToUpdate.getDescription());

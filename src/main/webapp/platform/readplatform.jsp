@@ -4,14 +4,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/mikitostyle.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Read Platform</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
   
-  <a class="active"  href="PlatformServlet?mode=platformlist">Platform</a>
+  <a class="active"  href="PlatformServlet?mode=platformlist">Platforms</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
 <br>

@@ -5,14 +5,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/mikitostyle.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Article Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
+
 <div class="navbar">
 <a  href="homeadmin.jsp">Back to Home</a>
 <a class="active" href="ArticleServlet?mode=articlelist">Articles</a>
+ <a href="LogoutServlet" id="logout">Logout</a>
  </div>
  <div class="main">
 	<%
@@ -54,26 +56,26 @@
 <form id="floatright" action="ArticleServlet?mode=insert" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">Name</label>
+      <label for="na">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="name" name="name" placeholder="inserisci name">
+      <input type="text" id="na" name="name" placeholder="inserisci name">
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="description">Description</label>
+     <label for="desc">Description</label>
     </div>
     <div class="col-75">
-      <input type="text" id="description" name="description" placeholder="inserisci descrizione"> 
+      <input type="text" id="desc" name="description" placeholder="inserisci descrizione"> 
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="price">Price</label>
+      <label for="pri">Price</label>
     </div>
    		 <div class="col-75">
-   		 <input type="text" id="price" name="price" placeholder="inserisci prezzo"> 
+   		 <input type="text" id="pri" name="price" placeholder="inserisci prezzo"> 
    	</div>
 </div>
  <button type="submit" >Insert</button>    

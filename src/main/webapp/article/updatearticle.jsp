@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/mikitostyle.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Edit Article</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  
+    <a href="homeadmin.jsp">Back to Home</a>
   <a class="active" href="ArticleServlet?mode=articlelist">Articles</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
@@ -25,26 +25,26 @@
 <form id="floatleft" action="ArticleServlet?mode=update&id=<%=a.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="name">Name</label>
+      <label for="na">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="name" name="name" value=<%=a.getName()%>>
+      <input type="text" id="na" name="name" value=<%=a.getName()%>>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="name">Description</label>
+     <label for="desc">Description</label>
     </div>
     <div class="col-75">
-      <input type="text" id="description" name="description" value=<%=a.getDescription()%>> 	
+      <input type="text" id="desc" name="description" value=<%=a.getDescription()%>> 	
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="type">Price</label>
+      <label for="pri">Price</label>
     </div>
    		 <div class="col-75">
-		 <input type="text" id="price" name="price" value=<%=a.getPrice()%>> 
+		 <input type="text" id="pri" name="price" value=<%=a.getPrice()%>> 
     	</div>
   </div>
       <button type="submit" >Edit</button>

@@ -5,16 +5,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/mikitostyle.css" rel="stylesheet">
-<title>BRAND</title>
+<link href="../css/vittoriostyle.css" rel="stylesheet">
+<title>Brand Manager</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
 <a  href="homeadmin.jsp">Back to Home</a>
- <br>
-<br>
-<br>
+  <a class="active" href="BrandServlet?mode=brandlist">brands</a>
+  <a href="LogoutServlet" id="logout">Logout</a>
+</div>
 <div class="main">
 	<%
 		List<BrandDTO> list = (List<BrandDTO>) request.getAttribute("list");
@@ -65,11 +65,10 @@
     </div>
     <div class="col-75">
       <input type="text" id="category" name="category" placeholder="inserisci categoria"> 
-	</select>
+  </div>
   </div>
  <button type="submit" >Insert</button>
-</div>
-</div>
+
 
 </form>
 

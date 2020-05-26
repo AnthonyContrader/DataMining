@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<link href="../css/mikitostyle.css" rel="stylesheet">
+<link href="../css/vittoriostyle.css" rel="stylesheet">
 <title>Edit Brand</title>
 </head>
 <body>
 <%@ include file="../css/header.jsp" %>
 <div class="navbar">
-  
+   <a href="homeadmin.jsp">Back to Home</a>
   <a class="active" href="BrandServlet?mode=brandlist">Brands</a>
   <a href="LogoutServlet" id="logout">Logout</a>
 </div>
@@ -26,7 +26,7 @@
       <label for="brand">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="article" name="name" value=<%=b.getName()%>>
+      <input type="text" id="brand" name="name" value=<%=b.getName()%>>
     </div>
   </div>
   <div class="row">
@@ -38,7 +38,7 @@
 	  </div>
 	  
     	</div>
-  </div>
+  
       <button type="submit" >Edit</button>
 </form>
 
