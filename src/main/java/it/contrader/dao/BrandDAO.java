@@ -102,7 +102,7 @@ public class BrandDAO implements DAO<Brand> {
 	preparedStatement.setString(1, brandToUpdate.getName());
 	preparedStatement.setString(2, brandToUpdate.getCategory());
 	
-	preparedStatement.setInt(4, brandToUpdate.getId());
+	preparedStatement.setInt(3, brandToUpdate.getId());
 	int a = preparedStatement.executeUpdate();
 	if (a > 0)
 	return true;

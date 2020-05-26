@@ -54,7 +54,7 @@
       <label for="feedback">Vote</label>
     </div>
     <div class="col-75">
-      <input type="text" id="feedback" name="vote" placeholder="inserisci voto">
+      <input type="number" min="0" max="5" id="feedback" name="vote" placeholder="inserisci voto">
     </div>
   </div>
   <div class="row">

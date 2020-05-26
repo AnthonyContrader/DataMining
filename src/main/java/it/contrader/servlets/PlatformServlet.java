@@ -75,7 +75,7 @@ public class PlatformServlet extends HttpServlet {
 			dto = new PlatformDTO (id,name, description, website);
 			ans = service.update(dto);
 			updateList(request);
-			getServletContext().getRequestDispatcher("/platform/usermanager.jsp").forward(request, response);                   // vedi sopra
+			getServletContext().getRequestDispatcher("/platform/platformmanager.jsp").forward(request, response);                   // vedi sopra
 			break;
 
 		case "DELETE":

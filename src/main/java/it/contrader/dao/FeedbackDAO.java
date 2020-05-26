@@ -10,7 +10,7 @@ import it.contrader.model.Feedback;
 public class FeedbackDAO implements DAO<Feedback>{
 
 	private final String QUERY_ALL = "SELECT * FROM feedback";
-	private final String QUERY_CREATE = "INSERT INTO feedback (vote, review) VALUES (?,?,?)";
+	private final String QUERY_CREATE = "INSERT INTO feedback (vote, review) VALUES (?,?)";
 	private final String QUERY_READ = "SELECT * FROM feedback WHERE id=?";
 	private final String QUERY_UPDATE = "UPDATE feedback SET vote=?, review=? WHERE id=?";
 	private final String QUERY_DELETE = "DELETE FROM feedback WHERE id=?";
@@ -107,7 +107,7 @@ public class FeedbackDAO implements DAO<Feedback>{
 	preparedStatement.setInt(1, feedbackToUpdate.getVote());
 	preparedStatement.setString(2, feedbackToUpdate.getReview());
 	
-	preparedStatement.setInt(4, feedbackToUpdate.getId());
+	preparedStatement.setInt(3, feedbackToUpdate.getId());
 	int a = preparedStatement.executeUpdate();
 	if (a > 0)
 	return true;

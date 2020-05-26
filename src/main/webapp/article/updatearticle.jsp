@@ -25,26 +25,26 @@
 <form id="floatleft" action="ArticleServlet?mode=update&id=<%=a.getId()%>" method="post">
   <div class="row">
     <div class="col-25">
-      <label for="na">Name</label>
+      <label for="name">Name</label>
     </div>
     <div class="col-75">
-      <input type="text" id="na" name="name" value=<%=a.getName()%>>
+      <input type="text" id="name" name="name" value=<%=a.getName()%>>
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-     <label for="desc">Description</label>
+     <label for="description">Description</label>
     </div>
     <div class="col-75">
-      <input type="text" id="desc" name="description" value=<%=a.getDescription()%>> 	
+      <input type="text" id="description" name="description" value=<%=a.getDescription()%>> 	
     </div>
   </div>
   <div class="row">
     <div class="col-25">
-      <label for="pri">Price</label>
+      <label for="price">Price</label>
     </div>
    		 <div class="col-75">
-		 <input type="text" id="pri" name="price" value=<%=a.getPrice()%>> 
+		 <input type="text" id="price" name="price" value=<%=a.getPrice()%>> 
     	</div>
   </div>
       <button type="submit" >Edit</button>
