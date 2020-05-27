@@ -13,6 +13,11 @@
 <div class="navbar">
 <a  href="homeadmin.jsp">Back to Home</a>
 <a class="active" href="FeedbackServlet?mode=feedbacklist">Feedbacks</a>
+ <a href="ArticleServlet?mode=articlelist">Articles</a>
+  <a href="BrandServlet?mode=brandlist">Brands</a>
+  <a href="PlatformServlet?mode=platformlist">Platforms</a>
+ 
+
   </div>
 <div class="main">
 	<%
