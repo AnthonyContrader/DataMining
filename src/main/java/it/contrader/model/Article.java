@@ -19,10 +19,7 @@ import lombok.NoArgsConstructor;
 
 public class Article {
 	
-	public enum Usertype {  //qui va lascaito?
-		ADMIN, USER
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;

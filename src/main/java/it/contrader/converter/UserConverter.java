@@ -1,11 +1,16 @@
 package it.contrader.converter;
 
 import org.springframework.stereotype.Component;
-
 import it.contrader.dto.UserDTO;
-
 import it.contrader.model.User;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Component
 public class UserConverter extends AbstractConverter<User, UserDTO> {
 

@@ -16,10 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Brand {
 	
-	public enum Usertype {
-		ADMIN, USER
-	}
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
