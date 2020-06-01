@@ -1,15 +1,16 @@
 package it.contrader.dao;
 
 import javax.transaction.Transactional;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import it.contrader.model.User;
+import it.contrader.model.Feedback;
 
 @Repository
 @Transactional
-public interface UserRepository extends CrudRepository<User, Long> {
+public interface FeedbackRepository extends CrudRepository<Feedback, Long> {
 
-	User findByUsernameAndPassword(String username, String password);
+	Feedback findByVoteAndReview(int vote, String review);
 
 }

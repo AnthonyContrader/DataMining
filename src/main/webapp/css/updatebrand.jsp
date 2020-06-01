@@ -1,0 +1,54 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="it.contrader.dto.BrandDTO"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Brand Edit page">
+<meta name="author" content="Vittorio Valent">
+<link href="/css/vittoriostyle.css" rel="stylesheet">
+<title>Edit Brand</title>
+</head>
+<body>
+<%@ include file="../css/header.jsp" %>
+<div class="navbar">
+   <a href="homeadmin.jsp">Back to Home</a>
+  <a class="active" href="BrandServlet?mode=brandlist">Brands</a>
+  <a href="LogoutServlet" id="logout">Logout</a>
+</div>
+<br>
+<div class="main">
+
+<%BrandDTO b = (BrandDTO) request.getAttribute("dto");%>
+
+
+<form id="floatleft" action="BrandServlet?mode=update&id=<%=b.getId()%>" method="post">
+  <div class="row">
+    <div class="col-25">
+      <label for="brand">Name</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="brand" name="name" value=<%=b.getName()%>>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-25">
+     <label for="category">Category</label>
+    </div>
+    <div class="col-75">
+      <input type="text" id="category" name="category" value=<%=b.getCategory()%>> 
+	  </div>
+	  
+    	</div>
+  
+      <button type="submit" >Edit</button>
+</form>
+
+	
+</div>
+<br>
+<%@ include file="../css/footer.jsp" %>	
+</body>
+</html>

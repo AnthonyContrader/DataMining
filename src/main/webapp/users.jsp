@@ -8,7 +8,6 @@
 <meta name="author" content="Vittorio Valent">
 <link href="/css/vittoriostyle.css" rel="stylesheet">
 <title>User Manager</title>
-
 </head>
 <body>
 	<%@ include file="./css/header.jsp"%>
